@@ -33,6 +33,7 @@ function init() {
         updateDemoInfo(data.metadata[0])
         barChart(sampleData);
         bubbleChart(sampleData);
+        gaugeChart(data.metadata[0]);
 
     })
     
@@ -57,6 +58,9 @@ function optionChanged(value){
         // select the metadata for the selection from the dropdown
         metadata = data.metadata.filter(metadata => metadata.id == value)
         updateDemoInfo(metadata[0])
+
+        // update gauge chart
+        gaugeChart(metadata[0])
     })
 
 }
